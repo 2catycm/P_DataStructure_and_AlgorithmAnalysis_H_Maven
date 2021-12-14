@@ -1,0 +1,10 @@
+^D:\ENGLISHSTANDARDPATH\PRACTICE_FILE\P_DATASTRUCTURE_AND_ALGORITHMANALYSIS_H\SRC\LAB4\CMAKELISTS.TXT
+setlocal
+"D:\EnglishStandardPath\DevelopTools\Microsoft Visual Studio 2019C\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab4 -BD:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab4/build --check-stamp-file D:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab4/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab2/problem4.cpp
+iostream
+-
+vector
+-
+

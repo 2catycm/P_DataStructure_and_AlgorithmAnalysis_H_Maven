@@ -1,0 +1,5 @@
+1. //#include 的位置把文件抄过去
+2.文件的内容不允许有public class
+3.不再重命名多次，一个库给多个java文件重用
+
+4.递归include，还有pragma once怎么说。
