@@ -3,7 +3,7 @@ package lab9;
 import java.awt.*;
 import java.util.Arrays;
 
-public class Matrix<T> {
+class Matrix<T> {
     //形状逻辑
     public int getRows() {
         return roi.height;
@@ -86,4 +86,15 @@ public class Matrix<T> {
     private int originalRows, originalCols;
     private final T[] data;
     private Rectangle roi;
+
+    public static void readDataFromOJ(Matrix<Integer> intMat, OJReader in) {
+        final var point = new Point(0, 0);
+        for (int i = 0; i < intMat.getRows(); i++) {
+            for (int j = 0; j < intMat.getCols(); j++) {
+                point.x = i;
+                point.y = j;
+                intMat.set(point, in.nextInt());
+            }
+        }
+    }
 }

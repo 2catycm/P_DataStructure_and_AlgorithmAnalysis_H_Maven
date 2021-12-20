@@ -3,7 +3,7 @@ package lab9;
 import java.util.*;
 
 //代码组织，上面的代码依赖于下面的实现。
-class UndirectedGraph {
+class UndirectedGraph extends DirectedGraph{
 //    public boolean hasCycle() {
 //        int time = 0;
 ////        Stack<Integer> stack = new Stack<>();
@@ -125,48 +125,33 @@ class UndirectedGraph {
         }
         return false;//如果没有relative，就没有环
     }
-    public int getVerticesCnt() {
-        return verticesCnt;
-    }
-
-    public int getEdgesCnt() {
-        return edgesCnt;
-    }
-
 
     //支持1-v的节点下标
+    @Override
     public void addEdge(int vertexU, int vertexV){
         adjacencyTables[vertexU].add(vertexV);
         adjacencyTables[vertexV].add(vertexU);
         edgesCnt++;
     }
     //支持1-v的节点下标
-    public Iterable<Integer> relativesOf(int vertexV){
-        return adjacencyTables[vertexV];
-    }
     public UndirectedGraph(int verticesCnt, int edgesCnt, OJReader in){
-        this(verticesCnt);
-        for (int i = 0; i < edgesCnt; i++) {
-            addEdge(in.nextInt(), in.nextInt());
-        }
+//        this(verticesCnt);
+//        for (int i = 0; i < edgesCnt; i++) {
+//            addEdge(in.nextInt(), in.nextInt());
+//        }
+        super(verticesCnt, edgesCnt, in);
+        //addEdge会动态绑定吧。
     }
     public UndirectedGraph(int verticesCnt) {
-        this.verticesCnt = verticesCnt;
-        this.adjacencyTables = new LinkedList[verticesCnt+1];
-        for (int i = 1; i < adjacencyTables.length; i++) {
-            adjacencyTables[i] = new LinkedList<>();
-        }
+        super(verticesCnt);
     }
-    private int verticesCnt;//支持1-v的节点下标
-    private int edgesCnt;
-    private LinkedList<Integer>[] adjacencyTables;
 
     @Override
     public String toString() {
         return "UndirectedGraph{" +
-                "verticesCnt=" + verticesCnt +
-                ", edgesCnt=" + edgesCnt +
-                ", adjacencyTables=" + Arrays.toString(adjacencyTables) +
+                "verticesCnt=" +super.verticesCnt +
+                ", edgesCnt=" + super.edgesCnt +
+                ", adjacencyTables=" + Arrays.toString(super.adjacencyTables) +
                 '}';
     }
 }
