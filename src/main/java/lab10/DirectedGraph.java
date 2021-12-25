@@ -1,10 +1,8 @@
-package lab9;
+package lab10;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Random;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
 class DirectedGraph implements Cloneable{
     @Override
@@ -20,13 +18,11 @@ class DirectedGraph implements Cloneable{
             throw new AssertionError();
         }
     }
-
     private interface IsLegalEdge{
         boolean test(int u, int v, DirectedGraph digraph);
     }
     private static IsLegalEdge digraphLegalEdge = (u, v, digraph) -> !(u==v || digraph.adjacencyTables[u].contains(v)); //禁止自环和平行边。
     private static IsLegalEdge dagLegalEdge = (u, v, digraph) -> !(u==v || digraph.adjacencyTables[u].contains(v));//TODO
-    //dag防止环，可以建造的时候就防止。让边始终是小指向大。
     public static DirectedGraph nextRandomDirectedGraph(int verticesCnt, int edgesCnt){
         return nextRandomDirectedGraph(verticesCnt, edgesCnt, digraphLegalEdge);
     }

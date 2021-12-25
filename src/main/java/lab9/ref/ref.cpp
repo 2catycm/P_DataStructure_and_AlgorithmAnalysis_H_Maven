@@ -45,13 +45,13 @@ int main(){
         for(int i = 0; i < m; i++){
             int n1, n2;
             scanf("%d%d", &n1, &n2);
-            nodes[n1] -> edges.push_back(nodes[n2]);
-            degree[n2] ++;
+            nodes[n1] -> edges.push_back(nodes[n2]); //n1的邻接表 
+            degree[n2] ++; //这是n2的入度 
         }
         queue<Node*> q;
         for(int i = 1; i <= n; i++){
             if(degree[i] == 0){
-                q.push(nodes[i]);
+                q.push(nodes[i]);//入度为0的节点为父节点。 
             }
         }
 
