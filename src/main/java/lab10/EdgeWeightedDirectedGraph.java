@@ -19,6 +19,14 @@ class EdgeWeightedDirectedGraph{
         public int getWeight() {
             return weight;
         }
+
+        @Override
+        public String toString() {
+            return "Edge{" +
+                    "other=" + other +
+                    ", weight=" + weight +
+                    '}';
+        }
     }
     protected int verticesCnt;//支持1-v的节点下标
     protected int edgesCnt;

@@ -149,10 +149,13 @@ abstract class AbstractIndexPriorityQueue<Key extends Comparable<Key>> implement
     }
 
     public void heapExchange(int heapIndexI, int heapIndexJ) {
-        assert (heapIndexI != heapIndexJ); // 不然不能交换。 这里priority queue的浮沉要求父子节点的堆索引不一样。
-        heap[heapIndexI] ^= heap[heapIndexJ];
-        heap[heapIndexJ] ^= heap[heapIndexI];
-        heap[heapIndexI] ^= heap[heapIndexJ];
+//        assert (heapIndexI != heapIndexJ); // 不然不能交换。 这里priority queue的浮沉要求父子节点的堆索引不一样。
+//        heap[heapIndexI] ^= heap[heapIndexJ];
+//        heap[heapIndexJ] ^= heap[heapIndexI];
+//        heap[heapIndexI] ^= heap[heapIndexJ];
+        var temp = heap[heapIndexI];
+        heap[heapIndexI] = heap[heapIndexJ];
+        heap[heapIndexJ] = temp;
         inverseHeap[heap[heapIndexI]] = heapIndexI;
         inverseHeap[heap[heapIndexJ]] = heapIndexJ;
     }

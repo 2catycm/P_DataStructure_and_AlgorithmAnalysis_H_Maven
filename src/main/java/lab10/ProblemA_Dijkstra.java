@@ -14,7 +14,7 @@ public class ProblemA_Dijkstra {
         int n = in.nextInt();
         int m = in.nextInt();
         final var edgeWeightedDirectedGraph = new EdgeWeightedDirectedGraph(n, m, in);
-        final var shortestDistance = new DijkstraShortestPath(edgeWeightedDirectedGraph, 1).getShortestDistance(n);
+        final var shortestDistance = new DijkstraShortestPath(edgeWeightedDirectedGraph, 1, false).getShortestDistance(n);
         out.println(shortestDistance ==Long.MAX_VALUE?-1:shortestDistance);
     }
 }
@@ -33,7 +33,6 @@ class DijkstraShortestPath{
                 this.vertex = vertex;
                 this.distance = distance;
             }
-
             @Override
             public boolean equals(Object o) {
                 if (this == o) return true;
@@ -54,36 +53,45 @@ class DijkstraShortestPath{
 
             @Override
             public int compareTo(Offer o) {
+//                System.out.println("comparing "+distance+" "+o.distance);
+//                System.out.println(Long.compare(distance, o.distance));
                 return Long.compare(distance, o.distance);
             }
         }
         BitSet isVisited = new BitSet();
-        final var offers = new PriorityQueue<Offer>(Comparator.reverseOrder());
+//        final var offers = new PriorityQueue<Offer>(Comparator.reverseOrder());
+        final var offers = new PriorityQueue<Offer>(new Comparator<Offer>() {
+            @Override
+            public int compare(Offer o1, Offer o2) {
+                return o1.compareTo(o2);
+            }
+        });
         distances[source] = 0;
-        offers.offer(new Offer(source, distances[source]));
+        offers.offer(new Offer(source, distances[source])); //起点和起点的距离零放入优先队列
         while (!offers.isEmpty()){
             final var top = offers.poll();
-            if (isVisited.get(top.vertex))
+            if (isVisited.get(top.vertex)) //如果节点已经是最短，那么就是幽灵offer
                 continue;
-            if (top.vertex==graph.verticesCnt) //针对本题的特殊判断。
-                return;
-//            if (top.distance>distances[top.vertex]) //不是大于等于。 这里是判断是否已经提到空中
-//                continue;
+            //现在优先队列的top是最短距离的，而且节点之前没有被提到过，所以一定已经是最短，标记为isVisited
             isVisited.set(top.vertex);
+            if(top.distance!=distances[top.vertex]){
+                throw new RuntimeException("算法有问题。");
+            }
             for (var edge:graph.relativesOf(top.vertex)){
-                final var newCost = edge.weight + distances[top.vertex];
                 if (isVisited.get(edge.other))
-                    continue; //这个对于性能很重要。
+                    continue; //对方已经是最短了. 直接跳过。
+                final var newCost = edge.weight + distances[top.vertex]; //从top连接relative，可以提供一种可能性。
                 if (newCost >= distances[edge.other])
                     continue;
                 distances[edge.other] = newCost;
 //                offers.remove(new Offer(edge.other, distances[edge.other]));
-                offers.offer(new Offer(edge.other, newCost));
+                offers.offer(new Offer(edge.other, newCost)); //这个之后可能被更短的offer覆盖掉。但是没有关系。
             }
         }
     }
     private void pfs() {
         final var queue = new IndexInferiorityQueue<Long>(graph.verticesCnt); // vertex->distance map.
+        distances[source] = 0;
         queue.offer(source, distances[source]);
         while (!queue.isEmpty()) {
             final var top = queue.pollIndex(); //把当前最小的提离桌面。
@@ -97,14 +105,16 @@ class DijkstraShortestPath{
             }
         }
     }
-    public DijkstraShortestPath(EdgeWeightedDirectedGraph graph, int source) {
+    public DijkstraShortestPath(EdgeWeightedDirectedGraph graph, int source, boolean methodOne) {
         this.graph = graph;
         this.source = source;
         distances = new long[graph.verticesCnt+1];
         Arrays.fill(distances, Long.MAX_VALUE);
         distances[source] = 0;
-//        pfs();
-        pfs2();
+        if (methodOne){
+            pfs();
+        }else
+            pfs2();
     }
     private EdgeWeightedDirectedGraph graph;
     private int source;
