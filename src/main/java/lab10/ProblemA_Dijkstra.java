@@ -121,4 +121,4 @@ class DijkstraShortestPath{
 }
 //# include "OnlineJudgeIO.java"
 //# include "优先队列.java"
-//# include "EdgeWeightedDirectedGraph.java"
+//# include "EdgeWeightedGraphs.java"

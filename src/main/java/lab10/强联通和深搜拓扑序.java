@@ -5,8 +5,8 @@ import java.util.Stack;
 
 class StronglyConnectedComponents {
     private BitSet isVisited;
-    private int[] id; // identifier for every vertices.
-    private int count; // number of components, also the next index of it.
+    private int[] id; // identifier for every component.
+    private int count = 0; // number of components, also the next index of it.
     private DirectedGraph digraph;
     private DirectedGraph reverse;
     public StronglyConnectedComponents(DirectedGraph digraph, DirectedGraph reverse) {
@@ -16,11 +16,11 @@ class StronglyConnectedComponents {
         id = new int[digraph.verticesCnt+1];
         final var order = new DepthFirstOrder(reverse).getReversePost();
         while (!order.empty()){
-            final var pop = order.pop();
-            if (isVisited.get(pop))
+            final var top = order.pop();
+            if (isVisited.get(top))
                 continue; //已经归类为某个连通分量了。
-            dfs(pop);
-            count++;
+            count++;//先加加，比如之前没有分量，现在第一个出现了，应该把top的这些顶点归类为分量1，而不是分量0.
+            dfs(top);
         }
     }
     private void dfs(int current) {
@@ -30,6 +30,13 @@ class StronglyConnectedComponents {
             if (!isVisited.get(relative))
                 dfs(relative);
     }
+    public int getIdOf(int vertex){
+        return id[vertex];
+    }
+    public int getCount() {
+        return count;
+    }
+
     public boolean isStronglyConnected(){
         return count==1;
     }

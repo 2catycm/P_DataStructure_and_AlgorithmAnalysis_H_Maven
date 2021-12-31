@@ -57,7 +57,7 @@ abstract class AbstractIndexPriorityQueue<Key extends Comparable<Key>> implement
     }
 
     public boolean offer(int recordID, Key key) {
-        if (!inBound(recordID) || Objects.nonNull(keys[recordID]))
+        if (!inBound(recordID) /*|| Objects.nonNull(keys[recordID])*/)
             return false;
         size++;
         keys[recordID] = key; //which is new.
@@ -73,7 +73,7 @@ abstract class AbstractIndexPriorityQueue<Key extends Comparable<Key>> implement
         heapExchange(1, size);
         heap[size] = 0;
         inverseHeap[max] = 0;
-        keys[max] = null; //非常纠结，要不要保留。
+//        keys[max] = null; //非常纠结，要不要保留。 //保留，除非keys被更新
         size--;
         sink(1);
         return max;
@@ -86,7 +86,7 @@ abstract class AbstractIndexPriorityQueue<Key extends Comparable<Key>> implement
 
     @Override
     public boolean updateKey(int recordID, Key newKey) {
-        if (!inBound(recordID) || Objects.isNull(keys[recordID]))
+        if (!inBound(recordID) /*|| Objects.isNull(keys[recordID])*/)
             return false;
         keys[recordID] = newKey;
         sink(inverseHeap[recordID]);

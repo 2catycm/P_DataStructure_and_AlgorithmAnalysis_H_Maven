@@ -76,6 +76,15 @@ class DirectedGraph implements Cloneable{
             adjacencyTables[i] = new LinkedList<>();
         }
     }
+    public DirectedGraph reverse(){
+        final var result = new DirectedGraph(verticesCnt);
+        for (int i = 1; i <= verticesCnt; i++) {
+            for (var relative:relativesOf(i)){
+                result.addEdge(relative, i);
+            }
+        }
+        return result;
+    }
     protected int verticesCnt;//支持1-v的节点下标
     protected int edgesCnt;
     protected LinkedList<Integer>[] adjacencyTables;
