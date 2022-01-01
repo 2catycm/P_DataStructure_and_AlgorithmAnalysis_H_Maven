@@ -9,6 +9,11 @@ class Reachability {
     private DirectedGraph digraph;
 //    private Collection<Integer> sources;//有contains方法
     private Iterable<Integer> sources;
+
+    public BitSet getIsVisited() {
+        return isVisited;
+    }
+
     public int getUnreachableCnt(){
         return digraph.verticesCnt - isVisited.cardinality();
     }
