@@ -1,4 +1,4 @@
-## lab3_sorting sorting总结
+## lab2_binary_search 二分总结
 [TOC]
 ### A题
 #### 审题

@@ -1,0 +1,4 @@
+D:\开发工具\JetBrains\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" D:\EnglishStandardPath\Practice_File\P_DataStructure_and_AlgorithmAnalysis_H\src\lab2_binary_search
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab2_binary_search/cmake-build-debug

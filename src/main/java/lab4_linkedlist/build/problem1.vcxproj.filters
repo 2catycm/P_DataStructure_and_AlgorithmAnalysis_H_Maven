@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\EnglishStandardPath\Practice_File\P_DataStructure_and_AlgorithmAnalysis_H\src\lab4_linkedlist\problem1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\EnglishStandardPath\Practice_File\P_DataStructure_and_AlgorithmAnalysis_H\src\lab4_linkedlist\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F20A8123-0FFA-3EC1-8B11-C5189374B16F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

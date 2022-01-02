@@ -1,0 +1,85 @@
+The system is: Windows - 10.0.19042 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: D:/EnglishStandardPath/DevelopTools/Microsoft Visual Studio 2019C/VC/Tools/MSVC/14.28.29333/bin/Hostx86/x86/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.28.29336 版
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.28.29336.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+
+The C compiler identification is MSVC, found in "D:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab2_binary_search/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: D:/EnglishStandardPath/DevelopTools/Microsoft Visual Studio 2019C/VC/Tools/MSVC/14.28.29333/bin/Hostx86/x86/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.28.29336 版
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.28.29336.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+
+The CXX compiler identification is MSVC, found in "D:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab2_binary_search/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab2_binary_search/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_46e25\fast && 	"D:\EnglishStandardPath\DevelopTools\Microsoft Visual Studio 2019C\VC\Tools\MSVC\14.28.29333\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_46e25.dir\build.make /nologo -L                  CMakeFiles\cmTC_46e25.dir\build
+
+Building C object CMakeFiles/cmTC_46e25.dir/CMakeCCompilerABI.c.obj
+
+	"D:\EnglishStandardPath\DevelopTools\Microsoft Visual Studio 2019C\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\cl.exe" @C:\Users\叶璨铭\AppData\Local\Temp\nm7238.tmp
+
+CMakeCCompilerABI.c
+
+Linking C executable cmTC_46e25.exe
+
+	D:\开发工具\JetBrains\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_46e25.dir --rc="D:\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.18362.0\x86\mt.exe" --manifests -- "D:\EnglishStandardPath\DevelopTools\Microsoft Visual Studio 2019C\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\cmTC_46e25.dir\objects1.rsp @C:\Users\叶璨铭\AppData\Local\Temp\nm747B.tmp
+
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: D:/EnglishStandardPath/Practice_File/P_DataStructure_and_AlgorithmAnalysis_H/src/lab2_binary_search/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_12c7b\fast && 	"D:\EnglishStandardPath\DevelopTools\Microsoft Visual Studio 2019C\VC\Tools\MSVC\14.28.29333\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_12c7b.dir\build.make /nologo -L                  CMakeFiles\cmTC_12c7b.dir\build
+
+Building CXX object CMakeFiles/cmTC_12c7b.dir/CMakeCXXCompilerABI.cpp.obj
+
+	"D:\EnglishStandardPath\DevelopTools\Microsoft Visual Studio 2019C\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\cl.exe" @C:\Users\叶璨铭\AppData\Local\Temp\nm78A1.tmp
+
+CMakeCXXCompilerABI.cpp
+
+Linking CXX executable cmTC_12c7b.exe
+
+	D:\开发工具\JetBrains\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_12c7b.dir --rc="D:\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.18362.0\x86\mt.exe" --manifests -- "D:\EnglishStandardPath\DevelopTools\Microsoft Visual Studio 2019C\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\cmTC_12c7b.dir\objects1.rsp @C:\Users\叶璨铭\AppData\Local\Temp\nm794E.tmp
+
+
+
+
