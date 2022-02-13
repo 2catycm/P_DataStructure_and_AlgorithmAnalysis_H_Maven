@@ -1,6 +1,7 @@
 package util.syntax;
 
 import org.apache.commons.lang3.time.StopWatch;
+import util.syntax.OJWriter;
 
 import java.util.Arrays;
 import java.util.Random;

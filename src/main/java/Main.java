@@ -1,0 +1,87 @@
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.io.StreamTokenizer;
+//import java.util.InputMismatchException;
+//import java.util.function.IntConsumer;
+//public class Main {
+//    public static void main(String[] args) {
+//        lab10_advanced_graph.ProblemA_A_plus_B.main(args);
+//    }
+//}
+//interface lab10_advanced_graph{
+//    class ProblemA_A_plus_B{
+//        private static util.syntax.OJReader in = new util.syntax.OJReader();
+//        public static void main(String[] args) {
+//            System.out.println(in.nextInt()+in.nextInt());
+//        }
+//    }
+//}
+//interface util{
+//    interface syntax{
+//        public class OJReader extends StreamTokenizer {
+//            public OJReader() {
+//                super(new BufferedReader(new InputStreamReader(System.in)));
+//            }
+//
+//            public String next() {
+//                try {
+//                    var t = super.nextToken();
+//                    if (t == TT_NUMBER)
+//                        return (int) super.nval + "";
+//                    else if (t == TT_WORD)
+//                        return super.sval;
+//                    throw new InputMismatchException("Input is neither a string nor an integer while calling next(). ");
+//                } catch (IOException e) {
+//                    throw new InputMismatchException("IO exception. ");
+//                }
+//            }
+//
+//            public int nextInt() {
+//                try {
+//                    var t = super.nextToken();
+//                    if (t != TT_NUMBER)
+//                        throw new InputMismatchException("Input is not an integer while calling nextInt(). ");
+//                } catch (IOException e) {
+//                    throw new InputMismatchException("IO exception.");
+//                }
+//                return (int) super.nval;
+//            }
+//
+//            public void nextEOFForEachInt(IntConsumer consumer) {
+//                try {
+//                    for (var t = super.nextToken(); t != TT_EOF; t = super.nextToken()) {
+//                        consumer.accept((int) super.nval);
+//                    }
+//                } catch (IOException e) {
+//                    throw new InputMismatchException("IO exception.");
+//                }
+//            }
+//
+//            public int[] nextIntArray() {
+//                return nextIntArray(this.nextInt());
+//            }
+//
+//            public int[] nextIntArray(int length) {
+//                int[] array = new int[length];
+//                for (int i = 0; i < length; i++) {
+//                    array[i] = this.nextInt();
+//                }
+//                return array;
+//            }
+//
+//            public Integer[] nextIntegerArray() {
+//                return nextIntegerArray(this.nextInt());
+//            }
+//
+//            public Integer[] nextIntegerArray(int length) {
+//                Integer[] array = new Integer[length];
+//                for (int i = 0; i < length; i++) {
+//                    array[i] = this.nextInt();
+//                }
+//                return array;
+//            }
+//        }
+//    }
+//}
+//

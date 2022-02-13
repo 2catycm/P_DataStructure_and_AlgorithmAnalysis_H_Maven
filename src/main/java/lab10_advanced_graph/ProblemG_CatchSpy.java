@@ -2,6 +2,10 @@ package lab10_advanced_graph;
 
 import java.util.HashMap;
 import java.util.stream.IntStream;
+//# include "OnlineJudgeIO.java"
+//# include "DirectedGraph.java"
+//# include "Reachability.java"
+//# include "强联通和深搜拓扑序.java"
 
 //# pragma OJ Main
 public class ProblemG_CatchSpy {
@@ -29,6 +33,10 @@ public class ProblemG_CatchSpy {
         //缩点
         HashMap<Integer, Integer> compressedDirectSpy = new HashMap<>(j);//new id->cost
         final var scc = new StronglyConnectedComponents(directedGraph, directedGraph.reverse());
+        if (scc.isStronglyConnected()){
+            out.println(0);
+            return;
+        }
         final var compressed = new DirectedGraph(scc.getCount());
         int[] inDegree = new int[compressed.verticesCnt+1];
         int[] outDegree = new int[compressed.verticesCnt+1]; //初始化：零图的degree还是零
@@ -58,17 +66,16 @@ public class ProblemG_CatchSpy {
             }
         }
         //找入度为0的点（都是可以被抓的）求代价和。
-        //#pragma OJ DEBUG PUSH
-        if (IntStream.range(1, compressed.verticesCnt + 1).filter(i -> inDegree[i] == 0).anyMatch(i->!compressedDirectSpy.containsKey(i))) {
+        //#IFDEF DEBUG
+        if (IntStream.range(1, compressed.verticesCnt + 1)
+                .filter(i -> inDegree[i] == 0).
+                anyMatch(i->!compressedDirectSpy.containsKey(i))) {
             throw new RuntimeException("算法有问题");
         }
-        //#pragma OJ DEBUG POP
-        final var sum = IntStream.range(1, compressed.verticesCnt + 1).parallel().filter(i -> inDegree[i] == 0).mapToLong(compressedDirectSpy::get).sum();
+        //#ENDIF
+        final var sum = IntStream.range(1, compressed.verticesCnt + 1).
+                parallel().filter(i -> inDegree[i] == 0).
+                mapToLong(compressedDirectSpy::get).sum();
         out.println(sum);
     }
 }
-
-//# include "OnlineJudgeIO.java"
-//# include "DirectedGraph.java"
-//# include "Reachability.java"
-//# include "强联通和深搜拓扑序.java"

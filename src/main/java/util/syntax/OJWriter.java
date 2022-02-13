@@ -1,11 +1,10 @@
 package util.syntax;
 
-import java.io.*;
-import java.util.InputMismatchException;
+import java.io.BufferedOutputStream;
+import java.io.PrintWriter;
 import java.util.List;
-import java.util.function.IntConsumer;
 
-class OJWriter extends PrintWriter {
+public class OJWriter extends PrintWriter {
     public <T> void printlnList(List<T> list) {
         printlnList(list, " ");
     }
